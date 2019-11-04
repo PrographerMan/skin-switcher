@@ -1,6 +1,10 @@
 # SkinSwitcher
 
-This mod for GTA Vice City adds points of changing and buying skins for player. You can also use this script to add new points on the map. You will need to include the file "skinSwitcher.txt" to your script-file like this: `{$INCLUDE skinSwitcher.txt}` and use opcode [05F5](http://gtagmodding.com/opcode-database/opcode/05F5/). An example there is in [skinSwitcherPoint.txt](https://github.com/PrographerMan/skin-switcher/blob/master/skinSwitcherPoint.txt) file.
+This mod adds markers in Vice City which can be used for changing and buying skins for player.
+
+## Customization
+You can also add new points on the map for yourself. To do that, create new cleo script, include "skinSwitcher.txt" file to your script like this: `{$INCLUDE skinSwitcher.txt}`. Then call `@CreateSkinSwitcher` function via [05F5](http://gtagmodding.com/opcode-database/opcode/05F5/) opcode to create new marker.
+You can find an example of script in [skinSwitcherPoint.txt](https://github.com/PrographerMan/skin-switcher/blob/master/skinSwitcherPoint.txt) file.
 
 You can find points on map here:
 
