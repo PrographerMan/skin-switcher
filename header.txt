@@ -1,0 +1,737 @@
+{$CLEO}
+0000:
+wait 0
+
+thread 'cleox'
+    wait 0
+end_thread
+
+
+:GetPlayerSkinStatus
+    wait 0
+    
+    if
+        0@ == 0    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "Street" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 1    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "Soiree" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 2    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "Coveralls" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 3    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "CountryClub" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 4    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "Havana" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 5    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "Cop" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 6    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "BankJob" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 7    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "Casual" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 8    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "MrVercetti" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 9    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "TracksuitBlack" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 10    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "TracksuitRed" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 11    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Skins" key "Frankie" store_to 1@
+        05F6: ret 1  1@
+    end
+    
+05F6: ret 1  1@
+
+
+:SetPlayerSkinStatus
+    wait 0
+    
+    if
+        0@ == 0    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "Street"
+    end
+    
+    if
+        0@ == 1    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "Soiree"
+    end
+    
+    if
+        0@ == 2    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "Coveralls"
+    end
+    
+    if
+        0@ == 3    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "CountryClub"
+    end
+    
+    if
+        0@ == 4    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "Havana"
+    end
+    
+    if
+        0@ == 5    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "Cop"
+    end
+    
+    if
+        0@ == 6    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "BankJob"
+    end
+    
+    if
+        0@ == 7    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "Casual"
+    end
+    
+    if
+        0@ == 8    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "MrVercetti"
+    end
+    
+    if
+        0@ == 9    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "TracksuitBlack"
+    end
+    
+    if
+        0@ == 10    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "TracksuitRed"    
+    end
+    
+    if
+        0@ == 11    
+    then
+        0AF3: write_float_to_ini_file 1.0 "cleo\skinSwitcher.ini" section "Skins" key "Frankie"
+    end    
+    
+05F6: ret 0
+
+
+:GetPlayerSkinPrice
+    wait 0
+    
+    1@ = 0
+    
+    if
+        0@ == 0    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "Street" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 1    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "Soiree" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 2    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "Coveralls" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 3    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "CountryClub" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 4    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "Havana" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 5    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "Cop" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 6    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "BankJob" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 7    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "Casual" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 8    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "MrVercetti" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 9    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "TracksuitBlack" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 10    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "TracksuitRed" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+    if
+        0@ == 11    
+    then
+        0AF2: read_float_from_ini_file "cleo\skinSwitcher.ini" section "Prices" key "Frankie" store_to 1@
+        008C: 1@ = float_to_integer 1@
+        05F6: ret 1  1@
+    end
+    
+05F6: ret 1  1@
+
+
+:GetPlayerSkinId
+    wait 0
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYER'
+    then
+        0@ = 0
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYER2'
+    then
+        0@ = 1
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYER3'
+    then
+        0@ = 2
+    end 
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYER4'
+    then
+        0@ = 3
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYER5'
+    then
+        0@ = 4
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYER6'
+    then
+        0@ = 5
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYER7'
+    then
+        0@ = 6
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYER8'
+    then
+        0@ = 7
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAYE9'
+    then
+        0@ = 8
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAY10'
+    then
+        0@ = 9
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAY11'
+    then
+        0@ = 10
+    end
+    
+    if
+        0500: player $PLAYER_CHAR skin == 'PLAY12'
+    then
+        0@ = 11
+    end
+
+05F6: ret 1  0@
+
+
+:PrintPlayerSkinLabelById
+    wait 0
+    
+    if
+        0@ == 0
+    then
+        01E5: text_1number_highpriority 'CEXPS0' 1@ flag 999999 time 1 
+    end
+    
+    if
+        0@ == 1
+    then
+        01E5: text_1number_highpriority 'CEXPS1' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 2
+    then
+        01E5: text_1number_highpriority 'CEXPS2' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 3
+    then
+        01E5: text_1number_highpriority 'CEXPS3' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 4
+    then
+        01E5: text_1number_highpriority 'CEXPS4' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 5
+    then
+        01E5: text_1number_highpriority 'CEXPS5' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 6
+    then
+        01E5: text_1number_highpriority 'CEXPS6' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 7
+    then
+        01E5: text_1number_highpriority 'CEXPS7' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 8
+    then
+        01E5: text_1number_highpriority 'CEXPS8' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 9
+    then
+        01E5: text_1number_highpriority 'CEXPS9' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 10
+    then
+        01E5: text_1number_highpriority 'CEXPS10' 1@ flag 999999 time 1
+    end
+    
+    if
+        0@ == 11
+    then
+        01E5: text_1number_highpriority 'CEXPS11' 1@ flag 999999 time 1
+    end
+05F6: ret 0
+
+
+:SetPlayerSkinByID
+    wait 0
+    
+    if
+        0@ == 0
+    then
+        05F5: call_scm_func @SetPlayerSkinStreet params_count 1  1@
+    end
+    
+    if
+        0@ == 1
+    then
+        05F5: call_scm_func @SetPlayerSkinSoiree params_count 1  1@
+    end
+    
+    if
+        0@ == 2
+    then
+        05F5: call_scm_func @SetPlayerSkinCoveralls params_count 1  1@
+    end
+    
+    
+    if
+        0@ == 3
+    then
+        05F5: call_scm_func @SetPlayerSkinCountryClub params_count 1  1@
+    end
+    
+    
+    if
+        0@ == 4
+    then
+        05F5: call_scm_func @SetPlayerSkinHavana params_count 1  1@
+    end
+    
+    if
+        0@ == 5
+    then
+        05F5: call_scm_func @SetPlayerSkinCop params_count 1  1@
+    end
+    
+    if
+        0@ == 6
+    then
+        05F5: call_scm_func @SetPlayerSkinBankJob params_count 1  1@
+    end
+    
+    if
+        0@ == 7
+    then
+        05F5: call_scm_func @SetPlayerSkinCasual params_count 1  1@
+    end
+    
+    if
+        0@ == 8
+    then
+        05F5: call_scm_func @SetPlayerSkinMrVercetti params_count 1  1@
+    end
+    
+    if
+        0@ == 9
+    then
+        05F5: call_scm_func @SetPlayerSkinTracksuitBlack params_count 1  1@
+    end
+    
+    if
+        0@ == 10
+    then
+        05F5: call_scm_func @SetPlayerSkinTracksuitRed params_count 1  1@
+    end
+    
+    if
+        0@ == 11
+    then
+        05F5: call_scm_func @SetPlayerSkinFrankie params_count 1  1@
+    end
+05F6: ret 0
+
+
+:SetPlayerSkinFrankie
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAY12'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAY12'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinTracksuitRed
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAY11'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAY11'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinTracksuitBlack
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAY10'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAY10'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinMrVercetti
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER9'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER9'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinCasual
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER8'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER8'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinBankJob
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER7'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER7'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinCop
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER6'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER6'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinHavana
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER5'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER5'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinCountryClub
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER4'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER4'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinCoveralls
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER3'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER3'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinSoiree
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER2'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER2'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:SetPlayerSkinStreet
+    wait 0
+    
+    if 
+        0500: player $PLAYER_CHAR skin == 'PLAYER'
+    then
+        05F6: ret 0    
+    end
+    
+    0352: set_actor 0@ skin_to 'PLAYER'
+    038B: load_requested_models
+    0353: refresh_actor 0@
+05F6: ret 0
+
+
+:DestroySphere
+    wait 0
+    
+    03BD: destroy_sphere 0@ 
+    
+05F6: ret 0
+
+
+:CreateSphere
+    wait 0
+
+    03BC: 4@ = create_sphere 0@ 1@ 2@ 3@
+
+05F6: ret 1 4@
+
+
+:GetGameVersion
+    wait 0
+    
+    05E5: 0@ = game_version
+    
+    if 
+        0@ == 1
+    then
+        1@ = 1
+    else
+        1@ = 0 
+    end
+05F6: ret 1  1@
+
+
+:IsPlayerOnMission
+    wait 0
+    
+    if
+        $ONMISSION == 1
+    then
+        0@ = true
+    else 
+        0@ = false
+    end
+05F6: ret 1  0@

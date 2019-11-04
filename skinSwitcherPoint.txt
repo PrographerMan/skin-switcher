@@ -1,0 +1,10 @@
+{$CLEO}
+0000:
+wait 0
+
+thread 'skswp'
+//                                                      Sphere X    Sphere Y    Sphere Z    Commercial
+05F5: call_scm_func @CreateSkinSwitcher params_count 4  409.886     1037.4531   25.2999     true
+end_thread
+
+{$INCLUDE skinSwitcher.txt}
